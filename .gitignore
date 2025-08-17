@@ -1,4 +1,5 @@
-/artifacts/*
+artifacts/*
+!artifacts/.gitkeep
 /db
 /txData/default/logs
 /cache
