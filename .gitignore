@@ -3,10 +3,6 @@ artifacts/*
 /db
 /txData/default/logs
 /cache
-/resources/[maps]
-/resources/[assets]
-/resources/\[maps\]
-/resources/\[assets\]
 *.ini
 .replxx_history
 /env.cfg

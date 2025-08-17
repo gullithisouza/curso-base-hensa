@@ -50,6 +50,8 @@
 			"**/artifacts": true,
 			"**/data/db": true,
 			"**/*.code-workspace": true,
+			"**/*.github": true,
+			"**/*./[maps]": true,
 		}
 	}
 }
