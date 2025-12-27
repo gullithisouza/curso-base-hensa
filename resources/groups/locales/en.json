@@ -1,0 +1,8 @@
+{
+    "notify_title": "Notification",
+    "notify_not_allowed": "You are not allowed to used command!.",
+    "notify_incorrect_usage": "Incorrect command usage. Use: /group [ID] [group] [hierarchy]",
+    "notify_group_not_found": "The group %s not found.",
+    "notify_set_success": "Group %s added successfully to ID %s in hierarchy %s.",
+    "notify_set_error": "Failed to add group %s to ID %s in hierarchy %s."
+}

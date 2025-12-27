@@ -1,14 +1,20 @@
 Proxy = module("vrp", "lib/Proxy")
 vRP = Proxy.getInterface("vRP")
 
+lib.locale()
+
 RegisterCommand("group", function(source, args)
     local Passport = vRP.Passport(source)
+
+    local notify = {
+        title = locale("notify_title")
+    }
 
     if not vRP.HasGroup(Passport, "Admin") or Passport > 10 then
         return vRP.Notify(
             source,
-            "Notificação",
-            "Você não pode usar este comando.",
+            notify.title,
+            locale("notify_not_allowed"),
             "vermelho"
         )
     end
@@ -18,8 +24,8 @@ RegisterCommand("group", function(source, args)
     if not id or not group or not hierarchy or not Passport then
         return vRP.Notify(
             source,
-            "Notificação",
-            "Uso incorreto do comando. Exemplo: /group [ID] [grupo] [hierarquia]",
+            notify.title,
+            locale("notify_incorrect_usage"),
             "vermelho"
         )
     end
@@ -29,8 +35,8 @@ RegisterCommand("group", function(source, args)
     if not CheckGroupExists then
         return vRP.Notify(
             source,
-            "Notificação",
-            "O Grupo " .. group .. " não foi encontrado.",
+            notify.title,
+            locale("notify_group_not_found", group),
             "vermelho"
         )
     end
@@ -40,16 +46,16 @@ RegisterCommand("group", function(source, args)
     if vRP.HasPermission(id, group) then
         return vRP.Notify(
             source,
-            "Notificação",
-            "Grupo " .. group .. " adicionado com sucesso ao ID " .. id .. " na hierarquia " .. hierarchy .. ".",
+            notify.title,
+            locale("notify_set_success", group, id, hierarchy),
             "verde"
         )
     end
 
     return vRP.Notify(
         source,
-        "Notificação",
-        "Não foi possível adicionar o grupo " .. group .. " ao ID " .. id .. " na hierarquia " .. hierarchy .. ".",
+        notify.title,
+        locale("notify_set_error", group, id, hierarchy),
         "vermelho"
     )
 end)

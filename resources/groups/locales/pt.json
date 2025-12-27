@@ -1,0 +1,8 @@
+{
+    "notify_title": "Notificação",
+    "notify_not_allowed": "Você não tem permissão para usar este comando!",
+    "notify_incorrect_usage": "Uso incorreto do comando. Use: /group [ID] [grupo] [hierarquia]",
+    "notify_group_not_found": "O grupo %s não foi encontrado.",
+    "notify_set_success": "O grupo %s foi adicionado com sucesso ao ID %s na hierarquia %s.",
+    "notify_set_error": "Falha ao adicionar o grupo %s ao ID %s na hierarquia %s."
+}
