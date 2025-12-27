@@ -104,3 +104,14 @@ end
 function vRP.Device(source,Seconds)
     return DEVICE.Device(source,Seconds)
 end
+
+
+---  Sistema de notificação global para o vRP
+---@param source number
+---@param title string
+---@param message string
+---@param type string
+---@param timer number
+function vRP.Notify(source, title, message, type, timer)
+	return TriggerClientEvent("Notify",source, type or "verde", message, title, timer or 5000)
+end
